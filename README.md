@@ -7,4 +7,9 @@ The project include python codes for matrix operations such as
 - cramers rule
 - matrix addition, subrtraction, multiplication
 
+## Directions 
+
+Run main.py and enjoy
+
+
 
