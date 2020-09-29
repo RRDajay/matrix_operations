@@ -18,8 +18,7 @@ def find_determinant(matrix): # recursion
             return matrix[0][0]*matrix[1][1] - matrix[1][0]*matrix[0][1]
 
         elif len(matrix) == 1:
-            return 1
-
+            return matrix[0][0]
         else:
             determinant = 0
             for col in range(len(matrix)):
@@ -40,7 +39,7 @@ def cofactor_expansion(matrix, row, col):
 
 def Transpose(matrix):
 
-    transpose = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+    transpose = list(map(list,zip(*matrix)))
     
     return transpose
 

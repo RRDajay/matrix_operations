@@ -1,4 +1,4 @@
-from matrixx import *
+from matrix import *
 
 if __name__ == "__main__":
 
