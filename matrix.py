@@ -71,9 +71,7 @@ class Matrix():
 
         # Input size of square matrix, eg (2x2), (3x3), ...etc
         matrix = []
-
         select_matrix = input('\tInput matrix to be edited (A or B):')
-
         n_shape = int(input('\tInput shape of matrix: (if 3, matrix will be 3x3): '))
 
         for i in range((n_shape)):
@@ -98,13 +96,10 @@ class Matrix():
 
         else:
             for (a_element, b_element) in zip(self.matrix_A, self.matrix_B):
-
                 addition = list(map(lambda x, y: x + y, a_element, b_element))
                 result.append(addition)
 
-        
-            input("""\n{} - {}\n\nResult: {} \n\nPress any key to continue..."""
-                    .format(self.matrix_A, self.matrix_B, result))
+            input("""\n{} - {}\n\nResult: {} \n\nPress any key to continue...""".format(self.matrix_A, self.matrix_B, result))
 
     def subtract(self):
 
@@ -121,8 +116,7 @@ class Matrix():
                 result.append(subtraction)
 
             
-            input("""\n{} - {}\n\nResult: {} \n\nPress any key to continue..."""
-                    .format(self.matrix_A, self.matrix_B, result))
+            input("""\n{} - {}\n\nResult: {} \n\nPress any key to continue...""".format(self.matrix_A, self.matrix_B, result))
 
     def multiply(self):
 
@@ -153,12 +147,10 @@ class Matrix():
         select_matrix = input('Find determinant of matrix A or matrix B (A or B)? ')
 
         if select_matrix in ['A', 'a']:
-            input("""\nDeterminant of {}: {} \n\nPress any key to continue..."""
-                .format(self.matrix_A, find_determinant(self.matrix_A)))
+            input("""\nDeterminant of {}: {} \n\nPress any key to continue...""".format(self.matrix_A, find_determinant(self.matrix_A)))
 
         else:
-            input("""\nDeterminant of {}: {} \n\nPress any key to continue..."""
-                .format(self.matrix_B, find_determinant(self.matrix_B)))
+            input("""\nDeterminant of {}: {} \n\nPress any key to continue...""".format(self.matrix_B, find_determinant(self.matrix_B)))
 
 
     def transpose(self):

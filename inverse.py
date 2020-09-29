@@ -11,6 +11,7 @@ def find_inverse(matrix):
     if determinant == 0:
         input("Determinant is zero, will not continue to solve for inverse")
         return None
+        
     # placeholder matrix
     inverse_matrix = deepcopy(matrix) 
 
