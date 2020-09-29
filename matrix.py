@@ -99,7 +99,7 @@ class Matrix():
                 addition = list(map(lambda x, y: x + y, a_element, b_element))
                 result.append(addition)
 
-            input("""\n{} - {}\n\nResult: {} \n\nPress any key to continue...""".format(self.matrix_A, self.matrix_B, result))
+            input("""\n{} + {}\n\nResult: {} \n\nPress any key to continue...""".format(self.matrix_A, self.matrix_B, result))
 
     def subtract(self):
 
@@ -136,10 +136,10 @@ class Matrix():
         select_matrix = input('Find inverse of matrix A or matrix B (A or B)? ')
 
         if select_matrix in ['A', 'a']:
-            input("""\Inverse of {}: {} \n\nPress any key to continue...""".format(self.matrix_A, find_inverse(self.matrix_A)))
+            input("""\nInverse of {}: {} \n\nPress any key to continue...""".format(self.matrix_A, find_inverse(self.matrix_A)))
 
         else:
-            input("""\Inverse of {}: {} \n\nPress any key to continue...""".format(self.matrix_B, find_inverse(self.matrix_B)))
+            input("""\nInverse of {}: {} \n\nPress any key to continue...""".format(self.matrix_B, find_inverse(self.matrix_B)))
 
         
     def determinant(self):
@@ -159,10 +159,10 @@ class Matrix():
 
         if select_matrix in ['A', 'a']:
 
-            input("""Transpose of {} is {} \n\nPress any key to continue...""".format(self.matrix_A, Transpose(self.matrix_A)))
+            input("""\nTranspose of {} is {} \n\nPress any key to continue...""".format(self.matrix_A, Transpose(self.matrix_A)))
 
         else:
-            input("""Transpose of {} is {} \n\nPress any key to continue...""".format(self.matrix_B, Transpose(self.matrix_B)))
+            input("""\nTranspose of {} is {} \n\nPress any key to continue...""".format(self.matrix_B, Transpose(self.matrix_B)))
 
 
     def __str__(self):
