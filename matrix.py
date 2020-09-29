@@ -3,13 +3,12 @@ from itertools import starmap
 from determinant import *
 from inverse import *
 
-
 def UserChoice(matrix):
 
     instruction = """
-        Matrix A: {},
+        Matrix A: {}
         Matrix B: {}
-
+        
         1. Edit Matrix
         2. Add Matrix (A + B)
         3. Subtract Matrix (A - B)
@@ -17,6 +16,7 @@ def UserChoice(matrix):
         5. Transpose 
         6. Find Matrix Inverse
         7. Find Matrix Determinant
+        8. Exit
         """.format(matrix.matrix_A, matrix.matrix_B)
     choice = int(input(instruction+"\nEnter desired operation: "))
     
@@ -40,6 +40,10 @@ def UserChoice(matrix):
         
     elif choice == 7:
         matrix.determinant()
+
+    elif choice == 8:
+        import sys
+        sys.exit(0)
     
     else:
         pass
@@ -68,7 +72,7 @@ class Matrix():
         # Input size of square matrix, eg (2x2), (3x3), ...etc
         matrix = []
 
-        selected_matrix = input('\tInput matrix to be edited (A or B): ')
+        select_matrix = input('\tInput matrix to be edited (A or B):')
 
         n_shape = int(input('\tInput shape of matrix: (if 3, matrix will be 3x3): '))
 
@@ -79,7 +83,7 @@ class Matrix():
 
             matrix.append(row)
 
-        if selected_matrix == 'A':
+        if select_matrix in ['a', 'A']:
             self.matrix_A = matrix
 
         else:
@@ -130,7 +134,6 @@ class Matrix():
         else:
 
             result = [[sum(a_element*b_element for a_element, b_element in zip(A_row, B_col)) for B_col in zip(*self.matrix_B)] for A_row in self.matrix_A]
-
             input("""{} x {} = {}""".format(self.matrix_A, self.matrix_B, result))
         
 
@@ -138,35 +141,37 @@ class Matrix():
         
         select_matrix = input('Find inverse of matrix A or matrix B (A or B)? ')
 
-        if select_matrix == 'A':
-            input("""\Inverse of {}: {} \n\nPress any key to continue..."""
-                .format(self.matrix_A, find_inverse(self.matrix_A)))
+        if select_matrix in ['A', 'a']:
+            input("""\Inverse of {}: {} \n\nPress any key to continue...""".format(self.matrix_A, find_inverse(self.matrix_A)))
+
         else:
-            input("""\Inverse of {}: {} \n\nPress any key to continue..."""
-                .format(self.matrix_A, find_inverse(self.matrix_A)))
+            input("""\Inverse of {}: {} \n\nPress any key to continue...""".format(self.matrix_B, find_inverse(self.matrix_B)))
+
         
     def determinant(self):
         
         select_matrix = input('Find determinant of matrix A or matrix B (A or B)? ')
 
-        if select_matrix == 'A':
+        if select_matrix in ['A', 'a']:
             input("""\nDeterminant of {}: {} \n\nPress any key to continue..."""
                 .format(self.matrix_A, find_determinant(self.matrix_A)))
+
         else:
             input("""\nDeterminant of {}: {} \n\nPress any key to continue..."""
-                .format(self.matrix_A, find_determinant(self.matrix_A)))
+                .format(self.matrix_B, find_determinant(self.matrix_B)))
+
 
     def transpose(self):
         
         select_matrix = input('Find Transpose of matrix A or matrix B (A or B)?')
 
-        if select_matrix == 'A':
+        if select_matrix in ['A', 'a']:
 
-            input("""\Transpose of {} is {} \n\nPress any key to continue..."""
-                .format(self.matrix_A, Transpose(self.matrix_A)))
+            input("""Transpose of {} is {} \n\nPress any key to continue...""".format(self.matrix_A, Transpose(self.matrix_A)))
+
         else:
-            input("""\Transpose of {} is {} \n\nPress any key to continue..."""
-                .format(self.matrix_B, Transpose(self.matrix_B)))
+            input("""Transpose of {} is {} \n\nPress any key to continue...""".format(self.matrix_B, Transpose(self.matrix_B)))
+
 
     def __str__(self):
         return (f'Given Matrix:\n\n\tMatrix A: {self.matrix_A}\n\tMatrix B: {self.matrix_B}\n')

@@ -7,6 +7,10 @@ def getMatrixMinor(m,i,j):
 def find_inverse(matrix):
 
     determinant = find_determinant(matrix)
+
+    if determinant == 0:
+        input("Determinant is zero, will not continue to solve for inverse")
+        return None
     # placeholder matrix
     inverse_matrix = deepcopy(matrix) 
 
